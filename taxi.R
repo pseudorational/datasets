@@ -16,7 +16,7 @@ dat =
                       levels = c(0,1),
                       labels = c('No Tip','Tip')))%>%
   mutate(trip_id = 1:length(tip_amount))%>%
-  select(trip_id, tpep_pickup_datetime,tpep_dropoff_datetime,trip_duration,trip_distance,passenger_count,fare_amount,tolls_amount,tip_amount, tip)
+  select(trip_id, trip_duration,trip_distance,passenger_count,fare_amount,tolls_amount,tip_amount, tip,tpep_pickup_datetime,tpep_dropoff_datetime)
 
 dat_small = dat[sample(1:nrow(dat),size = 0.1*nrow(dat)),]
 write.csv(x = dat,'taxi_tip_dec.csv',row.names = F)
@@ -26,6 +26,10 @@ write.csv(x = dat,'taxi_tip_dec.csv',row.names = F)
 dat_tip = dat[sample(1:nrow(dat[dat$tip=='Tip',]),size = 4*nrow(dat[dat$tip=='No Tip',])),]
 dat_no_tip = dat[dat$tip== 'No Tip',]
 dat_oversampled = rbind(dat_tip, dat_no_tip)
+dat_oversampled = dat_oversampled[order(dat_oversampled$trip_id),]
+
 nrow(dat_oversampled)
 prop.table(table(dat_oversampled$tip))
 write.csv(x = dat_oversampled,file = 'taxi_tip.csv')
+library(haven)
+write_sav(data = dat_oversampled,path = 'taxi_tip.sav')
