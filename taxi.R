@@ -35,3 +35,4 @@ library(haven)
 write_sav(data = dat_oversampled,path = 'taxi_tip.sav') 
 
 
+
