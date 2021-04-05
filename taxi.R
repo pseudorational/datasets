@@ -30,7 +30,7 @@ dat_oversampled = dat_oversampled[order(dat_oversampled$trip_id),]
 
 nrow(dat_oversampled)
 prop.table(table(dat_oversampled$tip))
-write.csv(x = dat_oversampled,file = 'taxi_tip.csv')
+write.csv(x = dat_oversampled,file = 'taxi_tip.csv', row.names=F)
 library(haven)
 write_sav(data = dat_oversampled,path = 'taxi_tip.sav') 
 
