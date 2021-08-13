@@ -20,7 +20,7 @@ marital_status = sample(c('married','widowed','divorced','separated','never marr
 # Location: 'Manhattan', 'Brooklyn', 'Queens', 'New Jersey'
 set.seed(1731); location = sample(x = c('Manhattan','Brooklyn','Queens','New Jersey'),size = 2000,replace = T, prob = c(0.5, 0.2, 0.2, 0.1))
 df = data.frame(id, health1, health2, health3, mcdonalds, chipotle, shake_shack, gender, age, marital_status, location)
-
+ 
 # Create Rank columns for the restaurants
 temp = df[,c('id', 'mcdonalds', 'chipotle','shake_shack')]
 library(tidyr); library(dplyr)
