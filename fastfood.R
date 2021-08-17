@@ -19,7 +19,9 @@ set.seed(103110)
 marital_status = sample(c('married','widowed','divorced','separated','never married'),size = 2000,T, prob = c(0.4, 0.01, 0.03, 0.06, 0.50))
 # Location: 'Manhattan', 'Brooklyn', 'Queens', 'New Jersey'
 set.seed(1731); location = sample(x = c('Manhattan','Brooklyn','Queens','New Jersey'),size = 2000,replace = T, prob = c(0.5, 0.2, 0.2, 0.1))
-df = data.frame(id, health1, health2, health3, mcdonalds, chipotle, shake_shack, gender, age, marital_status, location)
+# duration in seconds: time to complete the survey
+duration = 200*rlnorm(n = 2000,meanlog = 0,sdlog = 0.3)
+df = data.frame(id, health1, health2, health3, mcdonalds, chipotle, shake_shack, gender, age, marital_status, location, duration)
  
 # Create Rank columns for the restaurants
 temp = df[,c('id', 'mcdonalds', 'chipotle','shake_shack')]
