@@ -5,7 +5,7 @@
 id = 1:2000
 set.seed(617); health1 = sample(x = 1:7,size = 2000,replace = T)
 set.seed(617); health2 = ceiling(health1 * runif(n = 2000)*runif(n=400))
-set.seed(617); health3 = ceiling(health1*runif(n = 2000))
+set.seed(617); health3 = ceiling(health1*runif(n = 2000))  
 
 set.seed(617); mcdonalds = sample(1:7, size = 2000, replace=T,prob = c(0.2,0.2,0.2,0.1,0.1,0.1,0.1))
 set.seed(1706); chipotle = sample(1:7, size = 2000, replace=T,prob = c(0.1,0.1,0.2,0.2,0.2,0.1,0.1))
@@ -19,7 +19,9 @@ set.seed(103110)
 marital_status = sample(c('married','widowed','divorced','separated','never married'),size = 2000,T, prob = c(0.4, 0.01, 0.03, 0.06, 0.50))
 # Location: 'Manhattan', 'Brooklyn', 'Queens', 'New Jersey'
 set.seed(1731); location = sample(x = c('Manhattan','Brooklyn','Queens','New Jersey'),size = 2000,replace = T, prob = c(0.5, 0.2, 0.2, 0.1))
-df = data.frame(id, health1, health2, health3, mcdonalds, chipotle, shake_shack, gender, age, marital_status, location)
+# duration in seconds: time to complete the survey
+duration = 200*rlnorm(n = 2000,meanlog = 0,sdlog = 0.3)
+df = data.frame(id, health1, health2, health3, mcdonalds, chipotle, shake_shack, gender, age, marital_status, location, duration)
  
 # Create Rank columns for the restaurants
 temp = df[,c('id', 'mcdonalds', 'chipotle','shake_shack')]
