@@ -17,6 +17,6 @@ The dataset was previously shared on [TidyTuesday](https://github.com/rfordatasc
 ```{r warning=F, message=F}
 poll <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-05-31/poll.csv')
 head(poll)
-write.csv(poll, 'corporate_reputation.csv')
+write.csv(poll, 'corporate_reputation.csv',row.names = F)
 ```
 
