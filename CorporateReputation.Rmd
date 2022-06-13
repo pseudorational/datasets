@@ -1,14 +1,22 @@
 ---
-title: "Untitled"
+title: "Corporate Reputation"
 author: "Vishal Lala"
 date: '2022-06-13'
-output: html_document
+output:
+  html_document:
+    toc: no
+    theme: cerulean
+    highlight: haddock
+    df_print: paged
 ---
 
 This dataset is a result of a [Axios and Harris Poll](https://www.axios.com/2022/05/24/2022-axios-harris-poll-100-rankings) to gauage the reputation of the most visible brands in America. See [Harris Poll overview](https://theharrispoll.com/partners/media/axios-harrispoll-100/) for details on methodology. The dataset contains a reputation quality score and rank for the Top 100 firms for year 2022. It also contains the rank and reputation quality score for these firms for the five prior years.
 
-```{r}
+The dataset was previously shared on [TidyTuesday](https://github.com/rfordatascience/tidytuesday/tree/master/data/2022/2022-05-31). 
+
+```{r warning=F, message=F}
 poll <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-05-31/poll.csv')
+head(poll)
 write.csv(poll, 'corporate_reputation.csv')
 ```
 
