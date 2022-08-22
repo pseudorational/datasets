@@ -1,0 +1,112 @@
+---
+title: "Chocolate Data"
+author: "Vishal Lala"
+date: '2022-08-04'
+output: html_document
+---
+
+
+# Chocolate Data
+The dataset describes over 2000 chocolates based on the source of the coffee bean, company, percent cocoa, ingredients, most memorable characteristics, and rating. We are interested in learning about the characteristics of a chocolate that make it likable (or delicious) and constructing models to predict rating. 
+
+Variable Description     
+
+* id: Unique identifier  
+* company_location: location of company  
+* country_of_bean_origin: country of origin of coffee bean  
+* cocoa_percent: Cocoa percent (% chocolate)  
+* rating: Rating of chocolate  
+* 20 Memorable Characteristics Variables: Yes or No  
+    + sweet  
+    + nutty  
+    + cocoa  
+    + roasty  
+    + earthy  
+    + creamy  
+    + sandy  
+    + fatty  
+    + floral  
+    + intense  
+    + spicy  
+    + sour  
+    + vanilla  
+    + fruit  
+    + molasses  
+    + woody  
+    + sticky  
+    + coffee  
+    + rich  
+    + dried.fruit  
+* 7 Ingredients: Yes or No  
+    + ingredient_Beans  
+    + ingredient_Sugar  
+    + ingredient_Sweetener  
+    + ingredient_Cocoa_Butter   
+    + ingredient_vanilla  
+    + ingredient_lecithin  
+    + ingredient_salt   
+* number_of_ingredients: Number of ingredients in the chocolate  
+
+Source: This data was derived from chocolate data shared by [Flavors of Cacao](http://flavorsofcacao.com/chocolate_database.html). 
+
+
+
+```{r}
+chocolate <- read.csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-01-18/chocolate.csv')
+```
+Memorable characteristics contains a number of comma seprated memorable characteristics. Here is a list of the top 20 Unique characteristics. 
+```{r}
+vars = sort(table(str_trim(unlist(str_split(string = chocolate$most_memorable_characteristics,pattern = ',')))),decreasing = T)[1:20]
+names(vars)
+```
+
+Represent memorable characteristics using 20 dummy coded variables 
+```{r}
+n = 11
+for (i in names(vars)){
+  chocolate[,n] = ifelse(as.integer(str_detect(string = chocolate$most_memorable_characteristics,pattern = i))==1,'Yes','No')
+  n = n + 1
+}
+colnames(chocolate)[11:30] = make.names(names(vars))
+```
+
+Extract cocoa_percent
+```{r}
+chocolate$cocoa_percent =readr::parse_number(chocolate$cocoa_percent)
+```
+
+Extract Ingredients into dummy variables
+```{r}
+ingredient_list = c('B','S','S*','C','V','L','Sa')
+n = 31
+for (i in ingredient_list){
+  chocolate[,n] = ifelse(as.integer(str_detect(string = chocolate$ingredients,pattern = i))==1,'Yes','No')
+  n = n + 1
+}
+colnames(chocolate)[31:37] = c('ingredient_Beans','ingredient_Sugar',
+                               'ingredient_Sweetener','ingredient_Cocoa_Butter',
+                               'ingredient_vanilla','ingredient_lecithin','ingredient_salt')
+chocolate$number_of_ingredients = as.integer(str_extract(string = chocolate$ingredients,pattern='[0-9]'))
+
+```
+
+```{r}
+library(forcats)
+chocolate$company_location = fct_lump(f = chocolate$company_location,prop = 0.02)
+chocolate$country_of_bean_origin = fct_lump(f = chocolate$country_of_bean_origin, prop = 0.02)
+```
+
+```{r}
+chocolate = 
+  chocolate |>
+  select(-ref, - company_manufacturer, - review_date, - specific_bean_origin_or_bar_name, -ingredients, -most_memorable_characteristics)|>
+  #select(-ingredient_sweetener)    # variable has zero variance
+  mutate(id = 1:nrow(chocolate))%>%
+  select(id, everything())
+
+```
+
+```{r}
+write.csv(chocolate, 'chocolate.csv', row.names = F)
+```
+
