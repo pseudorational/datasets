@@ -1,0 +1,67 @@
+---
+title: "Board Games Dataset"
+author: "Vishal Lala"
+date: '2022-08-04'
+output: html_document
+---
+
+# Board Games Data
+This dataset contains information on over 10,000 board games. Our goal is to gain an understanding of the factors that makes a game popular and be able to predict its rating. The data available to use includes characteristics of the game and the categories it fits into. 
+  
+* game_id: Unique game identifier  
+* name: Name of the game  
+* max_players: Maximum recommended players  
+* playtime: Average playtime (min)  
+* min_age: Minimum recommended age  
+* min_players: Minimum recommended players  
+* age_of_game: Years since game was published. Relative to 2022.  
+* users_rated: Number of users that rated the game  
+* rating: Average rating on Board Games Geek (1-10)  
+* category (CardGame, Wargame, Fantasy, Fighting, Economic, 
+Science.Fiction, Dice, Party.Game, AbstractStrategy, 
+Childrens.Game, WorldWarII, Bluffing, Humor, Animals, 
+Adventure, Medieval, Action.Dexterity, 
+Deduction, Movies.TV.Radiotheme, Miniatures): "Yes" if the game fits the category, otherwise "No"    
+
+Source: Original data was gathered from BoardGameGeek.    
+
+Read in data
+```{r warning = F, message=F}
+board_games = readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-03-12/board_games.csv")
+library(dplyr)
+```
+
+Remove games with missing values for category. max_playtime and min_playtime are highly correlated, so only keeping one of the two. Dropping game description, image urls, thumbnail urls, and any other categorical variable with too many unique levels (e.g., author name). Constructing a new variable, age_of_game. 
+```{r}
+games = 
+  board_games |>
+  filter(!is.na(category))|>
+  select(game_id, name, max_players, playtime = max_playtime, min_age, min_players, year_published, category, users_rated, rating = average_rating) |>
+  mutate(age_of_game = 2022 - year_published) |>
+  select(-year_published)
+```
+
+Extract top 20 game categories and create dummy variables for them. 
+```{r}
+library(stringr)
+vars = sort(table(str_trim(unlist(str_split(string = games$category,pattern = ',')))),decreasing = T)[1:20]
+#names(vars)
+#str(games)
+n = 11
+for (i in names(vars)){
+  #  games[,n] = factor(ifelse(as.integer(str_detect(string = games$category,pattern = i))==1,"Yes","No"),labels = c('Yes','No'),ordered = T)
+  games[,n] = ifelse(as.integer(str_detect(string = games$category,pattern = i))==1,"Yes","No")
+  n = n + 1
+}
+colnames(games)[11:30] = make.names(str_replace_all(string =names(vars), pattern = c("[:space:]*", "\\\'"),replacement = ''))
+games$category=NULL
+games = 
+  games %>% 
+  select(game_id, name, max_players, playtime, min_age, min_players, age_of_game, users_rated, rating, everything())
+```
+```{r}
+write.csv(games, 'board_games.csv',row.names = F)
+
+```
+
+
