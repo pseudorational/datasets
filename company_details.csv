@@ -1,0 +1,101 @@
+company,corporate_office_address,date_founded,name_of_ceo
+Trader Joe's,"800 South Shamrock Avenue, Monrovia, CA 91016",4/11/1958,Dan Bane
+HEB Grocery,"646 S Flores St, San Antonio, TX 78204",11/26/1905,Charles Butt
+Patagonia,"35 W Santa Clara St, Ventura, CA 93001",1/1/1973,Ryan Gellert
+The Hershey Company,"1025 Reese Ave, Hershey, PA, 17033",1/1/1894,Michele Buck
+Wegmans,"1500 Brooks Ave, Rochester, NY 14624",1/1/1916,Colleen Wegman
+Samsung,"1320-20 Seocho 2(i)-dong, Seocho-gu, Seoul, South Korea",1/13/1969,Kim Ki Nam; Kim Hyun Suk; Koh Don-Jin 
+Amazon.com,"440 Terry Ave N, Seattle, WA 98109",7/5/1994,Andy Jassy
+Toyota Motor Corporation,"1 Toyota-Cho, Toyota City, Aichi Prefecture",8/28/1937,Akio Toyoda
+Honda Motor Company,"1919 Torrance Blvd, Torrance, CA 90501",9/24/1948,Toshihiro Mibe
+Sony,"1 Sony Dr, Park Ridge, NJ 07656",5/7/1946,Kenichiro Yoshida
+IBM,"1 Orchard Rd, Armonk, NY 10504",6/16/1911,Arvind Krishna
+Tesla Motors,"860 Washington St, New York, NY 10014",7/1/2003,Elon Musk
+Blue Cross Blue Shield Association,"225 North Michigan Ave., Chicago, IL 60601",1/1/1929,Kim A. Keck
+Berkshire Hathaway,"3555 Farnam Street, Omaha, NE 68131",1/1/1839,Warren Buffett
+Microsoft,"One Microsoft Way,Redmond, WA 98052",6/25/1981,Satya Nadella
+The Home Depot,"2455 Paces Ferry Road, Atlanta, GA 30339",6/29/1978,Edward Decker
+UPS,"55 Glenlake Parkway, Atlanta, GA 30328",8/28/1907,Carol B. Tome
+USAA,"9800 Fredericksburg Rd, San Antonio, TX 78288",6/20/1922,Wayne Peacock
+Publix Supermarkets,"3300 Publix Corporate Pkwy, Lakeland, FL 33801",9/6/1930,Todd Jones
+Subaru,"1-20-8, Ebisu, Shibuya-ku Tokyo Japan",7/15/1953,Tomomi Nakamura
+Apple,"1 Infinite Loop, Cupertino, CA",4/1/1976,Tim Cook
+Netflix,"100 Winchester Circle, Los Gatos, CA 95032",8/29/1997,Reed Hastings; Ted Sarandos
+3M Company,"2501 Hudson Road, Maplewood, MN 55144",6/13/1902,Mike Roman
+General Electric,"5 Necco Street, Boston, MA 02210",4/15/1892,"H. Lawrence Culp, Jr."
+The Kroger Company,"1014 Vine St., Cincinnati, OH 45202",1/1/1883,Rodney McMullen
+Costco,"999 Lake Drive, Issaquah, WA 98027",7/12/1976,W. Craig Jelinek
+LG Corporation,"201 James Record Rd SW Huntsville, AL 35824",10/1/1958,Koo Kwang-mo
+Chick-fil-A,"5200 Buffington Rd, Atlanta, GA 30349",5/23/1946,Andrew Truett Cathy
+Adidas,"Adi-Dassler-Strasse 1, 91074 Herzogenaurach, Germany",8/18/1949,Kasper RÃ¸rsted
+Walgreens,"108 Wilmot Road, Deerfield, IL 60015",2/15/1901,Rosalind Brewer
+Google,"1600 Amphitheatre Pkwy, Mountain View, CA 94043",9/4/1998,Sundar Pichai
+Target,"1000 Nicollet Mall, Minneapolis, MN 55403",6/24/1902,Brian Cornell
+UnitedHealth Group,"9900 Bren Road East, Minnetonka, MN 55343",1/1/1977,Andrew Witty
+Lowe's,"667 Madison Ave New York, NY 10065",1/1/1946,Marvin Ellison
+Unilever,"800 Sylvan Avenue, Englewood Cliffs, NJ 07632",9/2/1929,Alan Jope
+CVS (CVS Health),"1 CVS Drive, Woonsocket, RI 02895",5/8/1963,Karen S. Lynch
+Procter & Gamble Co.,"1A  Procter & Gamble Plaza, Cincinnati, OH 45202",10/31/1837,Jon R. Moeller
+Dell,"1 Dell Way, Round Rock, TX 78682",2/1/1984,Michael S. Dell
+FedEx Corporation,"942 South Shady Grove Road, Memphis, TN 38120",5/5/1971,Raj Subramaniam
+The Kraft Heinz Company,"1 PPG Place, Pittsburgh, PA 15222",1/1/1869,Miguel Patricio
+Ford Motor Company,"1 American Road, Dearborn, MI 48126",6/16/1903,Jim Farley
+Nestle,"Avenue Nestle, 55 Vevey, 1800 Switzerland",1/1/1866,Ulf Mark Schneider
+Starbucks Corporation,"2401 Utah Avenue South, Seattle, WA 98134",3/30/1971,Howard Schultz;Laxman Narasimhan
+Pfizer,"235 E 42nd St, New York, NY 10017",1/1/1849,Albert Bourla
+Stellantis,"Singaporestraat 92-100 Lijnden, 1175 RA Netherlands",1/16/2021,Carlos Tavares
+American Express,"200 Vesey St, New York, NY 10285",3/18/1850,Stephen Squeri
+PepsiCo,"700 Anderson Hill Road, Purchase, NY 10577 ",1/1/1965,Ramon Laguarta
+JPMorgan Chase & Co.,"270 Park Ave, New York, NY 10017",12/1/2000,Jamie Dimon
+Hobby Lobby,"7707 SW 44th St., Oklahoma City, OK 73179",8/3/1972,David Green
+Best Buy,"7601 Penn Ave S, Minneapolis, MN 55423",8/22/1966,Best Buy
+General Motors,"300 RENAISSANCE CTR DETROIT, MI 48243",9/16/1908,Mary Barra
+T-Mobile,"3618 Factoria Blvd SE, Bellevue, WA 98006",12/1/1999,Mike Sievert
+Yum! Brands,"1900 Colonel Sanders Ln, Louisville, KY 40213",5/30/1997,David Gibbs
+Nordstrom,"1700 7th Ave, Seattle, WA 98101",1/1/1901,Erik B. Nordstrom
+State Farm Insurance,"1 State Farm Plaza, Bloomington, IL 61710",1/1/1922,Michael L. Tipsord
+Nike,"855 6th Ave, New York, NY 10001",1/25/1964,John Donahoe
+Progressive Corporation,"6300 Wilson Mills Rd., Mayfield Village, OH 44143",3/10/1937,Tricia Griffith
+The Coca-Cola Company,"1 Coca-Cola Plaza, Atlanta, GA 30313",1/29/1892,James Quincey
+Spotify,"50 Greenwich St 62nd floor, New York, NY 10007",4/23/2006,Daniel Ek
+Citigroup,"388 Greenwich St, New York, NY 10013",10/8/1988,Jane Fraser
+Kohl's,"N56 W17000 Ridgewood Drive, Menomonee Falls, WI 53051",9/12/1962,Michelle Gass
+Royal Dutch Shell,"Shell Centre 2 York Road London, SE1 7NA United Kingdom",4/23/1907,Ben van Beurden
+Macy's,"151 West 34th Street, New York, NY 10001",10/28/1858,Jeffrey Gennette
+Wendy's,"1 Dave Thomas Blvd., Dublin, OH 43017",11/15/1969,Todd A. Penegor
+The Walt Disney Company,"500 S. Buena Vista St., Burbank, CA 91521",10/16/1923,Bob Chapek
+Delta Air Lines,"1030 Delta Blvd Atlanta, GA 30320",3/2/1925,Ed Bastian
+Verizon Communications,"095 Avenue of the Americas, New York, NY 10036",10/7/1983,Hans Vestberg
+DoorDash,"303 2nd St, Suite 800., San Francisco, CA 94107",1/12/2013,Tony Xu
+"Electronic Arts, Inc.","209 Redwood Shores Parkway, Redwood City, CA 94065",5/27/1982,Andrew Wilson
+Chipotle,"610 Newport Center Dr., Newport Beach, CA 92660",7/13/1993,Brian Niccol
+AT&T,"208 S Akard St, Dallas, TX 75202",10/5/1983,John T. Stankey
+Johnson & Johnson,"1 Johnson & Johnson Plaza, New Brunswick, NJ 08933",1/1/1886,Joaquin Duato
+Robinhood,"85 Willow Road Menlo Park, CA 94025",4/18/2013,Vlad Tenev
+Dollar Tree,"500 Volvo Pkwy, Chesapeake, VA 23320",1/1/1986,Michael A. Witynski
+Grubhub Inc.,"111 W. Washington Street, Suite 2100, Chicago, IL 60602",1/1/2004,Matthew Maloney
+Big Lots,"4900 E Dublin Granville Rd, Columbus, OH 43081",1/1/1967,Bruce K. Thorn
+Walmart,"702 Southwest 8th Street, Bentonville, AR 72716",10/31/1969,Doug McMillon
+Shein,"757 S. Alameda St., Suite 220, Los Angeles, CA 90021",10/1/2008,Chris Xu
+Bank of America,"100 North Tryon Street, Charlotte, NC 28255",9/30/1998,Brian Moynihan
+Goldman Sachs,"200 West Street, New York, NY 10282",1/1/1869,David M. Solomon
+Burger King,"5505 Blue Lagoon Dr., Miami, FL 33126",1/1/1954,Jose Cil
+Spectrum,"400 Atlantic Street, Stamford, CT 06901",1/1/1993,Tom Rutledge
+eBay,"2025 Hamilton Avenue, San Jose, CA 95125",9/3/1995,Jamie Iannone
+Subway,"325 Sub Way, Milford, CT 06461",8/28/1965,John Chidsey
+Comcast,"1701 John F Kennedy Blvd, Philadelphia, PA 19103",6/28/1963,Brian Roberts
+McDonald's,"110 N. Carpenter St. Chicago, IL 60607",4/15/1955,Chris Kempczinski
+JCPenney,"6501 Legacy Dr., Plano, TX 75024",4/14/1902,Marc Rosen
+ExxonMobil,"5959 Las Colinas Boulevard, Irving, TX 75039",8/5/1882,Darren Woods
+BP,"1500 Valley Rd, Wayne, NJ 07470",1/1/1909,Bernard Looney
+My Pillow,"343 East 82nd Street Suite 102, Chaska, MN 55318",1/1/2004,Mike Lindell
+Uber,"1455 Market St. Ste 400, San Francisco, CA 94103",3/1/2009,Dara Khosrowshahi
+Wells Fargo & Company,"420 Montgomery Street, San Francisco, CA 94104",3/18/1852,Charles W. Scharf
+Sears Holdings Corporation,"3333 Beverly Road Hoffman Estates, IL 60179",1/1/1893,Aylwin Lewis
+TikTok,"5800 Bristol Pkwy, Los Angeles, CA 90034",4/30/2015,Shou Zi Chew
+Spirit Airlines,"2800 Executive Way, Miramar, FL 33025",1/1/1983,Edward M. Christie III
+Fox Corporation,"500 Wshngton Ave Ste 1250, Saint Louis, MO 63101",3/19/2019,Lachlan Murdoch
+Facebook,"1 Hacker Way, Menlo Park, CA 94025",2/1/2004,Mark Zuckerberg
+Twitter,"355 Market Street Suite 900, San Francisco, CA 94103",3/21/2006,Parag Agrawal
+Wish.com,"820 Harmony Place, Milpitas, CA 95035",7/4/2010,Vijay Talwar
+The Trump Organization,"725 5th Ave, New York, NY 10022",1/1/1927,

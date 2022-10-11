@@ -1,0 +1,34 @@
+---
+title: "Team Salary"
+author: "Vishal Lala"
+date: '2022-09-16'
+output: html_document
+---
+
+
+```{r}
+library(Lahman)
+library(dplyr); library(ggplot2); library(ggthemes)
+team_salary = 
+  Salaries %>%
+  filter(yearID==2016)%>%
+  group_by(teamID)%>%
+  summarize(Average_Salary = mean(salary,na.rm=T))%>%
+  ungroup()
+
+
+
+team_perf = 
+  Teams %>%
+  filter(yearID==2017)%>%
+  mutate(win_pct = W/(W+L))%>%
+  select(teamID,name, win_pct)
+  
+team_salary = 
+  team_salary%>%
+  inner_join(team_perf)%>%
+  select(Team_ID = teamID,Team_Name=name,win_pct, Average_Salary)%>%
+  as.data.frame()
+write.csv(x = team_salary,file = 'team_salary.csv',row.names = F)
+```
+

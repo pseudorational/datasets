@@ -1,0 +1,39 @@
+---
+title: "Corporate Reputation"
+author: "Vishal Lala"
+date: '2022-06-13'
+output:
+  html_document:
+    toc: no
+    theme: cerulean
+    highlight: haddock
+    df_print: paged
+---
+
+This dataset is a result of a [Axios and Harris Poll](https://www.axios.com/2022/05/24/2022-axios-harris-poll-100-rankings) to gauage the reputation of the most visible brands in America. See [Harris Poll overview](https://theharrispoll.com/partners/media/axios-harrispoll-100/) for details on methodology. The dataset contains a reputation quality score and rank for the Top 100 firms for year 2022. It also contains the rank and reputation quality score for these firms for the five prior years.
+
+The dataset was previously shared on [TidyTuesday](https://github.com/rfordatascience/tidytuesday/tree/master/data/2022/2022-05-31). 
+
+```{r warning=F, message=F}
+poll <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-05-31/poll.csv')
+head(poll)
+write.csv(x = poll, file = 'corporate_reputation.csv',row.names = F)
+
+company_details = read.csv('company_details.csv')
+head(company_details)
+library(tidyr)
+library(dplyr)
+library(dplyr)
+reputation_wide = 
+  poll %>%
+  select(-rank)%>%
+  pivot_wider(names_from = year,values_from = rq) %>%
+  select(rank_2022 = '2022_rank', company, industry, change, year_2017 = '2017', year_2018 = '2018', year_2019 = '2019', year_2020 = '2020', year_2021 = '2021',year_2022 = '2022_rq')%>%
+  inner_join(company_details,by = c('company'='company'))%>%
+  mutate(date_founded = lubridate::mdy(date_founded))
+
+write.csv(reputation_wide, 'corporate_reputation_wide.csv',row.names = F)  
+
+
+```
+
